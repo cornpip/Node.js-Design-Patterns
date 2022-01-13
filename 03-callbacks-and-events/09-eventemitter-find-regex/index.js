@@ -11,6 +11,7 @@ function findRegex (files, regex) {
 
       emitter.emit('fileread', file)
       const match = content.match(regex)
+      console.log(match); 
       if (match) {
         match.forEach(elem => emitter.emit('found', file, elem))
       }
@@ -24,5 +25,6 @@ findRegex(
   /hello \w+/g
 )
   .on('fileread', file => console.log(`${file} was read`))
+  .on('fileread', file => console.log(`two twoooooooooooo`))
   .on('found', (file, match) => console.log(`Matched "${match}" in ${file}`))
   .on('error', err => console.error(`Error emitted ${err.message}`))

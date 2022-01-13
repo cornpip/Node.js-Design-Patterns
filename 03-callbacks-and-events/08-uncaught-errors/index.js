@@ -3,9 +3,18 @@ import { readFile } from 'fs'
 function readJSONThrows (filename, callback) {
   readFile(filename, 'utf8', (err, data) => {
     if (err) {
+      console.log('async err');
       return callback(err)
     }
     callback(null, JSON.parse(data))
+    // let parsed;
+    // try{
+    //   parsed = JSON.parse(data);
+    // }catch(err1){
+    //   console.log('catch');
+    //   return callback(err1);
+    // }
+    // callback(null,parsed);
   })
 }
 
@@ -17,10 +26,11 @@ try {
   console.log('This will NOT catch the JSON parsing exception')
 }
 
+// readJSONThrows('invalid_json.json', (err) => console.error(err))
 // Our last chance to intercept any uncaught error
-process.on('uncaughtException', (err) => {
-  console.error(`This will catch at last the JSON parsing exception: ${err.message}`)
-  // Terminates the application with 1 (error) as exit code.
-  // Without the following line, the application would continue
-  process.exit(1)
-})
+// process.on('uncaughtException', (err) => {
+//   console.error(`This will catch at last the JSON parsing exception: ${err.message}`)
+//   // Terminates the application with 1 (error) as exit code.
+//   // Without the following line, the application would continue
+//   process.exit(1)
+// })
