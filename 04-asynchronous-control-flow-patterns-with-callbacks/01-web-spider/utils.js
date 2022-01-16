@@ -17,5 +17,6 @@ export function urlToFilename (url) {
     filename += '.html'
   }
 
+  // console.log(path.dirname("www.example.com"));
   return filename
 }

@@ -24,7 +24,7 @@ function download (url, filename, cb) {
         return cb(err)
       }
       console.log(`Downloaded and saved: ${url}`)
-      cb(null, res.text)
+      cb(null);
     })
   })
 }
