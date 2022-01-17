@@ -34,6 +34,8 @@ export function urlToFilename (url) {
 export function getPageLinks (currentUrl, body) {
   return Array.from(cheerio.load(body)('a'))
     .map(function (element) {
+      // console.log(element);
+      // console.log('-------------------------------------');
       return getLinkUrl(currentUrl, element)
     })
     .filter(Boolean)

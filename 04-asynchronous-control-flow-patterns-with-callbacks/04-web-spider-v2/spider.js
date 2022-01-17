@@ -30,25 +30,36 @@ function download (url, filename, cb) {
 }
 
 function spiderLinks (currentUrl, body, nesting, cb) {
+  console.log(`nesting---> ${nesting}`);
   if (nesting === 0) {
+    console.log(`nesting zero`)
     // Remember Zalgo?
     return process.nextTick(cb)
   }
 
   const links = getPageLinks(currentUrl, body) // [1]
+  console.log(`links.length====${links.length}`);
+  console.log(`${links[0]}`)
   if (links.length === 0) {
+    console.log(`length zero`)
     return process.nextTick(cb)
   }
 
   function iterate (index) { // [2]
     if (index === links.length) {
-      return cb()
+      console.log(`length cut ---> ${links.length} and index --> ${index}`);
+      console.log(`${cb}`);
+      return cb() //이 콜백이 머지
     }
 
     spider(links[index], nesting - 1, function (err) { // [3]
       if (err) {
+        console.log(`not found index`);
         return cb(err)
       }
+      console.log(nesting);
+      console.log(`index---> ${index}`);
+      console.log(`-----------------`);
       iterate(index + 1)
     })
   }
