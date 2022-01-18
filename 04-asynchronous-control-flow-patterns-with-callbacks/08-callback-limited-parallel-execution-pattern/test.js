@@ -18,7 +18,7 @@ const tasks = [
   makeSampleTask('Task 7')
 ]
 
-const concurrency = 2
+const concurrency = 3;
 let running = 0
 let completed = 0
 let index = 0
