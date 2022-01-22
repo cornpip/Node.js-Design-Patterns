@@ -1,4 +1,5 @@
-import { randomBytes } from 'crypto'
+import { randomBytes as rb } from 'crypto'
+import mkdirp from 'mkdirp';
 
 function promisify (callbackBasedApi) {
   return function promisified (...args) {
@@ -18,8 +19,9 @@ function promisify (callbackBasedApi) {
   }
 }
 
-const randomBytesP = promisify(randomBytes)
+const randomBytesP = promisify(rb)
 randomBytesP(32)
   .then(buffer => {
+    console.log('-----------------');
     console.log(`Random bytes: ${buffer.toString()}`)
   })

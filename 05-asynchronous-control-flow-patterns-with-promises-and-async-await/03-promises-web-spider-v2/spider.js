@@ -29,7 +29,7 @@ function spiderLinks (currentUrl, content, nesting) {
   }
   const links = getPageLinks(currentUrl, content)
   for (const link of links) {
-    promise = promise.then(() => spider(link, nesting - 1))
+    promise = promise.then(() => spider(link, nesting - 1)) //? for문해도 마지막만 남게되는거아닌가 --> 아... promise바뀐거에 계속 then붙이는거구나
   }
 
   return promise
