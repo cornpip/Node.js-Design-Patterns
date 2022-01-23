@@ -9,8 +9,9 @@ function delay (milliseconds) {
 async function playingWithDelays () {
   console.log('Delaying...', new Date())
 
-  const dateAfterOneSecond = await delay(1000)
+  const dateAfterOneSecond = await delay(3000)
   console.log(dateAfterOneSecond)
+  console.log('hihihihiih');
 
   const dateAfterThreeSeconds = await delay(3000)
   console.log(dateAfterThreeSeconds)
@@ -22,3 +23,5 @@ playingWithDelays()
   .then(result => {
     console.log(`After 4 seconds: ${result}`)
   })
+
+console.log('hi')
