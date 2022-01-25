@@ -4,11 +4,12 @@ import Chance from 'chance'
 const chance = new Chance()
 
 const server = createServer((req, res) => {
+  console.log('hello');
   res.writeHead(200, { 'Content-Type': 'text/plain' }) // ①
   while (chance.bool({ likelihood: 95 })) { // ②
     res.write(`${chance.string()}\n`) // ③
   }
-  res.end('\n\n') // ④
+  res.end('\n\n123123') // ④
   res.on('finish', () => console.log('All data sent')) // ⑤
 })
 

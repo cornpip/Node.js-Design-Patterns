@@ -10,6 +10,7 @@ export class RandomStream extends Readable {
   }
 
   _read (size) {
+    console.log(this);
     const chunk = chance.string({ length: size }) // ①
     this.push(chunk, 'utf8') // ②
     this.emittedBytes += chunk.length

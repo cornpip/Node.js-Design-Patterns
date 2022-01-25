@@ -24,4 +24,7 @@ or:
 
 ```bash
 node simplified-construction.js
-```
+```  
+---
+this.push == readable.push
+  
