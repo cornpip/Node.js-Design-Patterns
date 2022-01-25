@@ -14,4 +14,6 @@ Run the stream version with:
 
 ```bash
 node gzip-stream.js <filename>
-```
+```  
+
+(npm husky test)
