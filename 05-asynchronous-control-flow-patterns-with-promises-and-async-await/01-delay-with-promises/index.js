@@ -1,12 +1,19 @@
+let queue = [];
+
 function delay (milliseconds) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
       // resolve(new Date())
-      resolve('전달값이여여ㅕㅕ여여');
+      // resolve('전달값이여여ㅕㅕ여여');
       console.log('hi')
-    }, milliseconds)
+      queue.push(resolve);
+      // queue.shift()('aa');
   })
 }
+
+
+// let b = delay(1).then(queue.shift()(33));
+
+// b.then((a)=>console.log(a));
 
 // console.log(`Delaying...${new Date().getSeconds()}s`)
 
@@ -30,33 +37,33 @@ function delay (milliseconds) {
 
 // process.nextTick(()=> console.log('11223333'));
 
-const a = new Promise((resolve, reject) => {
-  console.log('111');
-  setTimeout(() => {
-    // resolve(new Date())
-    resolve('전달값이여여ㅕㅕ여여');
-    console.log('hello')
-  }, 1)
-});
-
-// const b = new Promise((resolve, reject) => {
+// const a = new Promise((resolve, reject) => {
+//   console.log('111');
 //   setTimeout(() => {
 //     // resolve(new Date())
-//     resolve('전달값bbbbbbbbbb');
-//     console.log('hibbbbbbb')
-//   }, 1000)
+//     resolve('전달값이여여ㅕㅕ여여');
+//     console.log('hello')
+//   }, 1)
 // });
-
-async function test(){
-  for (i=0; i<3; i++){
-    await a; //프라미스의 실행? 은 한번인듯 resolve는 3번도는데 console.log('hi')는 한번돔
-    // await a;
-    console.log('1111111111111111');
-  }
+function delay2(){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve(new Date())
+      // resolve('전달값bbbbbbbbbb');
+      // reject('123');
+      //resolve와 reject는 택 1이다 동시에 안됨
+      console.log('hibbbbbbb')
+    }, 1000)
+  });
 }
 
-// a;
-// a;
+// delay2()
 
-test();
-// console.log('과연');
+new Promise(function(resolve, reject) {
+  setTimeout(() => {
+    throw new Error("에러 발생!");
+  }, 1000);
+}).catch((b)=>console.log(b));
+
+import buffer from 'buffer'
+console.log(buffer.constants.MAX_LENGTH);

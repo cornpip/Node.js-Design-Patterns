@@ -1,2 +1,4 @@
 received_files/*
 !received_files/.gitkeep
+./test.avi
+./simply.png

@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "01-delay-with-promises",
+  "version": "1.0.0",
+  "description": "This sample demonstrates how to use the `Promise` constructor to create a new `Promise` from scratch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

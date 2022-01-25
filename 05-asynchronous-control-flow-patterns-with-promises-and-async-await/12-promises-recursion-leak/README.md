@@ -9,4 +9,5 @@ To run the example launch:
 ```bash
 node index.js
 ```
-
+----
+foreach, map에서는 await가 무시된다. await는 for또는 while을 쓰자

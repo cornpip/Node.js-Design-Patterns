@@ -1,5 +1,6 @@
 export class TaskQueuePC {
   constructor (concurrency) {
+    console.log('113333');
     this.taskQueue = []
     this.consumerQueue = []
 
@@ -13,6 +14,9 @@ export class TaskQueuePC {
     while (true) {
       try {
         const task = await this.getNextTask()
+        console.log(task)
+        console.log('----------------');
+        console.log(task());
         await task()
       } catch (err) {
         console.error(err)
@@ -31,6 +35,7 @@ export class TaskQueuePC {
   }
 
   runTask (task) {
+    console.log('111111111');
     return new Promise((resolve, reject) => {
       const taskWrapper = () => {
         const taskPromise = task()
