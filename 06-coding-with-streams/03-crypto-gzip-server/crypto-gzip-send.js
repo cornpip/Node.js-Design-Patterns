@@ -7,6 +7,7 @@ import { createCipheriv, randomBytes } from 'crypto'
 const filename = process.argv[2]
 const serverHost = process.argv[3]
 const secret = Buffer.from(process.argv[4], 'hex')
+console.log(secret);
 
 const iv = randomBytes(16)
 
