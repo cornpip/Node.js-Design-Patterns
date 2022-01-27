@@ -25,3 +25,8 @@ Now you can make requests to the server by pointing your browser to [http://loca
 ```bash
 curl -i -vvv http://localhost:8080/
 ```
+---- 
+return은 함수를 종료하는 것( 주의__ if문, while문 탈출 아니다. )  
+while은 true면 무한반복 탈출은 break  
+
+res.write만 있는 예제에서는 res.end()없으면 res.on('finish')이벤트 동작안한다.

@@ -7,7 +7,8 @@ import { upload } from './upload.js'
 const filepath = process.argv[2] // ①
 const filename = basename(filepath)
 const contentStream = new PassThrough() // ②
-
+// console.log(`first==========`);
+// console.log(contentStream);
 upload(`${filename}.br`, contentStream) // ③
   .then((response) => {
     console.log(`Server response: ${response.data}`)
@@ -20,3 +21,5 @@ upload(`${filename}.br`, contentStream) // ③
 createReadStream(filepath) // ④
   .pipe(createBrotliCompress())
   .pipe(contentStream)
+
+// console.log(contentStream);
