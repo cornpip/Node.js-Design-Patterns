@@ -17,7 +17,9 @@ export function concatFiles (dest, files) {
       .on('error', reject)
       .on('finish', () => { // ④
         destStream.end()
-        resolve()
+        resolve() // concatFiles()의 cb()함수를 호출??
+        // await에 제어권을 돌려주는 역할을 하는 듯
+        // resolve없으면 main함수가 마저 돌지않는다. ( + 당연히 then의 cb도 안돈다 )
       })
   })
 }

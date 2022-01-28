@@ -16,10 +16,12 @@ export class ParallelStream extends Transform {
       this.push.bind(this),
       this._onComplete.bind(this)
     )
+    console.log('ddd');
     done()
   }
 
   _flush (done) {
+    console.log('aaaa');  // 3개 청크가 _transform 먼저 돌고나서 _flush돈다.
     if (this.running > 0) {
       this.terminateCb = done
     } else {

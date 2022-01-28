@@ -2,6 +2,7 @@ import { concatFiles } from './concat-files.js'
 
 async function main () {
   try {
+    console.log(process.argv);
     await concatFiles(process.argv[2], process.argv.slice(3))
   } catch (err) {
     console.error(err)
@@ -10,4 +11,4 @@ async function main () {
 
   console.log('All files concatenated successfully')
 }
-main()
+main().then(()=>console.log('aaa'));

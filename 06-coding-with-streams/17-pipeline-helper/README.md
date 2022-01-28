@@ -18,3 +18,7 @@ echo 'Hello World!' | gzip | node uppercasify-gzipped.js
 ```
 
 You can also look at the file `uppercasify-gzipped-promise.js` for an example on how to promisify the `pipeline()` helper.
+
+---
+
+gzip, gunzip 압축/압축풀기 리눅스(쉘) 명령어인데 powershell에서 안된다. 
