@@ -8,6 +8,7 @@ function createKey (password) {
 
 export function createCompressAndEncrypt (password, iv) {
   const key = createKey(password)
+  // console.log(key);
   const combinedStream = pumpify(
     createGzip(),
     createCipheriv('aes192', key, iv)
