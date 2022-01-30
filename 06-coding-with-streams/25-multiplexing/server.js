@@ -16,6 +16,7 @@ function demultiplexChannel (source, destinations) {
       if (currentLength === null) { // ③
         chunk = source.read(4)
         currentLength = chunk && chunk.readUInt32BE(0)
+        console.log(currentLength);
         if (currentLength === null) {
           return null
         }

@@ -8,10 +8,13 @@ function multiplexChannels (sources, destination) {
       .on('readable', function () { // ①
         let chunk
         while ((chunk = this.read()) !== null) {
+          console.log(chunk);
           const outBuff = Buffer.alloc(1 + 4 + chunk.length) // ②
           outBuff.writeUInt8(i, 0)
           outBuff.writeUInt32BE(chunk.length, 1)
+          // console.log(outBuff);
           chunk.copy(outBuff, 5)
+          console.log(outBuff);
           console.log(`Sending packet to channel: ${i}`)
           destination.write(outBuff) // ③
         }
@@ -27,7 +30,7 @@ function multiplexChannels (sources, destination) {
 const socket = connect(3000, () => { // ①
   const child = fork( // ②
     process.argv[2],
-    process.argv.slice(3),
+    // process.argv.slice(3),
     { silent: true }
   )
   multiplexChannels([child.stdout, child.stderr], socket) // ③
