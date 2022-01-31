@@ -15,7 +15,8 @@ export class ImmutableBuffer {
         this[prop] = buffer[prop].bind(buffer)
       }
     }
-
+    // console.log(modifiers);
+    console.log(`${executor}`);
     executor(modifiers)
   }
 }

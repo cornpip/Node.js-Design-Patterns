@@ -1,6 +1,6 @@
 import { ImmutableBuffer } from './immutableBuffer.js'
 
-const hello = 'Hello!'
+const hello = '2ello!'
 const immutable = new ImmutableBuffer(hello.length,
   ({ write }) => {
     write(hello)
@@ -8,6 +8,7 @@ const immutable = new ImmutableBuffer(hello.length,
 
 console.log(String.fromCharCode(immutable.readInt8(0)))
 
+//(immutable.readInt8(0)))
 // the following line will throw
 // "TypeError: immutable.write is not a function"
 
