@@ -18,8 +18,8 @@ const module = {
 //closures는 함수관련 개념
 
 const c = {a: 123};
-function a({a}){
-    console.log(a);  // 이거 뜻은 입력으로 들어온 객체에 key값이 a인게 있느냐
+function a({a}){ // 이거 뜻은 인자로 들어온 객체에 key값이 a인게 있느냐
+    console.log(a);
                     // a는 진짜 key이름, 있으면 a key의 value 반환
     // console.log({a});
 }

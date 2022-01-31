@@ -16,7 +16,8 @@ export class ImmutableBuffer {
       }
     }
     // console.log(modifiers);
-    console.log(`${executor}`);
+    // console.log(`${executor}`);
+    // console.log(this);
     executor(modifiers)
   }
 }
