@@ -1,18 +1,17 @@
 import { ImmutableBuffer } from './immutableBuffer.js'
 
-const hello = '2ello!'
+const hello = 'hello!'
 const immutable = new ImmutableBuffer(hello.length,
   ({ write }) => {
     write(hello)
   })
 
-console.log(immutable.readInt8());
-console.log(String.fromCharCode(immutable.readInt8(1)))
+// console.log(immutable.readInt8(0));
+console.log(String.fromCharCode(immutable.readInt8(0))) //buffer write의 default는 utf-8로 아스키코드로 쓴다봐도 되고 read도 Int8로 아스키코드 숫자로 읽는다.
 
-//(immutable.readInt8(0)))
-// the following line will throw
-// "TypeError: immutable.write is not a function"
+// 아스키코드 숫자를 아스키코드 테이블 대로 문자로 매핑해준다 == fromCharCode
+
 
 // immutable.write('Hello?')
-
-// modifiers에 넣어둔 함수는 생성자 생성때 실행함수에서만 사용할 수 있고 class this에 들어간 함수는 생성자 생성 후 immutablebuffer 인스턴스에서도 사용할 수 있다. --> 결국 immutablebuffer는 사용자와 내부 buffer 객체 사이에서 프록시 역할을 한다.  
+// the following line will throw
+// "TypeError: immutable.write is not a function"

@@ -30,6 +30,3 @@ console.log('--------------')
 a(c);
 console.log('--------------')
 a({c});
-
-const objj = {a: 123, b: 456, c:789};
-console.log(objj.b);

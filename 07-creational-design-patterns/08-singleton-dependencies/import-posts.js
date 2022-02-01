@@ -22,18 +22,22 @@ const posts = [
   // ...
 ]
 
+let num = 0;
 async function main () {
   const blog = new Blog()
   await blog.initialize()
 
   await Promise.all(
     posts.map(
-      (post) => blog.createPost(
+      (post) => {
+        console.log(num++);
+        return blog.createPost(
         post.id,
         post.title,
         post.content,
         post.created_at
-      )
+        )
+      }
     )
   )
   console.log('All posts imported')

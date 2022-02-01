@@ -16,6 +16,8 @@ async function main () {
       .toISOString()}`)
     console.log(post.content)
   }
+
+  console.log(posts.length);
 }
 
 main().catch(console.error)
