@@ -45,7 +45,7 @@ function patchToSafeCalculator (calculator) {
       throw Error('Division by 0')
     }
     // if valid delegates to the subject
-    return divideOrig.apply(calculator)
+    return divideOrig.apply(calculator) //원래꺼
   }
 
   return calculator
