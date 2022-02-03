@@ -9,4 +9,8 @@ Install the necessary dependencies with `npm install` and then run:
 ```bash
 node index.js
 ```
+----
+serialize => stringify => "object" (type String)  
+deserialize => parse => object (type Object)  
 
+readfile, writefile은 string 형태로

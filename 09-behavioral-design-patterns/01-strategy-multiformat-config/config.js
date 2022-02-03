@@ -20,6 +20,10 @@ export class Config {
     this.data = this.formatStrategy.deserialize(
       await fs.readFile(filePath, 'utf-8')
     )
+
+    const b = await fs.readFile(filePath, 'utf-8')
+    // console.log(typeof b);
+    // console.log(typeof this.data);
   }
 
   async save (filePath) {

@@ -6,6 +6,7 @@ export class OnlineState {
 
   send (data) {
     this.failsafeSocket.queue.push(data)
+    // console.log(data);
     this._safeWrite(data)
   }
 
