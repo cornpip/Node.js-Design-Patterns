@@ -57,3 +57,6 @@ promisify()() == new Promise ......  이고
 promisify() == Function: promisified 이다.  
 
 함수안의 n단 return은 순서대로 반환된다. _( 한번에 제일 안쪽의 return 반환이 아니다. )_
+
+---
+_함수: 내부전용 함수임을 뜻한다. 외부에서 사용한다고 오류가 나지는 않는다. _( 그냥 암묵적 룰 )_

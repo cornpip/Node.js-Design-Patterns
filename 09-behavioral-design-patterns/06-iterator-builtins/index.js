@@ -16,4 +16,4 @@ console.log(flattenedMatrix)
 
 console.log('destructuring assignment:')
 const [oneOne, oneTwo, twoOne, twoTwo] = matrix2x2
-console.log(oneOne, oneTwo, twoOne, twoTwo)
+console.log(typeof oneOne, oneTwo, twoOne, twoTwo)
