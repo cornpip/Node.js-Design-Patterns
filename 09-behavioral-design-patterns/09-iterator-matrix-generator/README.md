@@ -29,21 +29,21 @@ for of 루프는 순회를 시작하기 전, `[Symbol.iterator]()` 메소드를 
 
 구현은 이런 느낌이다.  
 ```
-  return {
-      [Symbol.iterator](){
-        return this
-      },
-      next: function() {
-        const currChar = String.fromCodePoint(currCode)
-        if (currCode > Z_CHAR_CODE) {
-          return { done: true }
-        }
-        currCode++
-        return { value: currChar, done: false }
-      }
+  [Symbol.iterator](){
+    return this
+  },
+
+  next(){
+    const currChar = String.fromCodePoint(currCode)
+    if (currCode > Z_CHAR_CODE) {
+      return { done: true }
     }
+    currCode++
+    return { value: currChar, done: false }
+  }
 ```
 하나의 객체 리터럴에 iterable( Symbol.iterator를 뜻함 )과 iterator( next를 뜻함 )를 구현하는 방법과  
+_( 위 방법은 함수로 했을 때, class도 마찬가지다. )_  
 ```
   [Symbol.iterator] () {
     let nextRow = 0
@@ -62,6 +62,7 @@ for of 루프는 순회를 시작하기 전, `[Symbol.iterator]()` 메소드를 
   }
 ```
 iterable의 return이 iterator인 방법으로 구현할 수 있다.  
+_( 이 방법은 클로저를 사용할 수 있다. )_   
 
 ---
 generator는 @@iterator _(= iterable + iterator)_ 객체이다. 그래서  

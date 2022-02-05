@@ -13,3 +13,23 @@ async function main () {
 }
 
 main()
+
+// setInterval(() => {
+//   console.log('~~~~~~~');
+// }, 100);
+
+const test = [
+  'https://nodejsdesignpatterns.com',
+  'https://example.com',
+  'https://mustbedownforsurehopefully.com'
+];
+
+const test2 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+for (const a of test){
+  console.log(`!!!!!!!!!${a}`)
+}

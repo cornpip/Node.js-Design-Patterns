@@ -1,8 +1,8 @@
 import { promisify } from './promisify_t.js'
 
 async function hi() {
-    const a = await time2_p(5, 1000)
-    // const a = await time(10, 1000);
+    // const a = await time2_p(5, 1000)
+    const a = time(10, 1000);
     console.log('start');
     console.log(a);
     console.log('finish');

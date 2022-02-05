@@ -7,6 +7,11 @@ export class CheckUrls {
 
   [Symbol.asyncIterator] () {
     const urlsIterator = this.urls[Symbol.iterator]()
+    console.log(this.urls);
+    // for (const a of this.urls){
+    //   console.log(a);
+    // };
+    console.log(urlsIterator);
 
     return {
       async next () {
@@ -17,6 +22,7 @@ export class CheckUrls {
 
         const url = iteratorResult.value
         try {
+          console.log('start');
           const checkResult = await superagent
             .head(url)
             .redirects(2)

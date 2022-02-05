@@ -40,4 +40,29 @@ export class Matrix {
       }
     }
   }
+
+  // ----------------------------------------------------
+  // [Symbol.iterator](){
+  //   this.nextRow = 0;
+  //   this.nextCol = 0;
+  //   return this
+  // }
+  
+  // next(){
+  //   if (this.nextRow === this.data.length) {
+  //     return { done: true }
+  //   }
+
+  //   const currVal = this.data[this.nextRow][this.nextCol]
+
+  //   if (this.nextCol === this.data[this.nextRow].length - 1) {
+  //     this.nextRow++
+  //     this.nextCol = 0
+  //   } else {
+  //     this.nextCol++
+  //   }
+
+  //   return { value: currVal }
+  // }
+
 }

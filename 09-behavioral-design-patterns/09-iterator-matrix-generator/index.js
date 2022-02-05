@@ -6,6 +6,7 @@ const matrix2x2 = new Matrix([
 ])
 
 const iterator = matrix2x2[Symbol.iterator]()
+console.log(iterator);
 let iterationResult = iterator.next()
 while (!iterationResult.done) {
   console.log(iterationResult.value)
