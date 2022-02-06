@@ -15,6 +15,8 @@ async function main () {
       console.log('Received', message)
       if (message.action === 'ping') {
         await this.send({ action: 'pong', echo: message.echo })
+      }else{
+        await this.send("success come on");
       }
       return message
     }

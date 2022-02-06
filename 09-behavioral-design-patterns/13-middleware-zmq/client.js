@@ -22,6 +22,11 @@ async function main () {
       .catch(err => console.error(err))
   }, 1000)
 
+  // setInterval(() => {
+  //   zmqm.send("knock knock")
+  //     .catch(err => console.error(err))
+  // }, 3000)
+
   console.log('Client connected')
 }
 

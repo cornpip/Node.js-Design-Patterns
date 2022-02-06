@@ -9,7 +9,11 @@ export class ZmqMiddlewareManager {
   }
 
   async handleIncomingMessages () {
+    console.log('~~~~start');
     for await (const [message] of this.socket) {
+      
+      console.log('~in');
+      // console.log(message);
       await this
         .executeMiddleware(this.inboundMiddleware, message)
         .catch(err => {
@@ -35,8 +39,11 @@ export class ZmqMiddlewareManager {
 
   async executeMiddleware (middlewares, initialMessage) {
     let message = initialMessage
+    console.log('~in2');
+    console.log(middlewares);
     for await (const middlewareFunc of middlewares) {
       message = await middlewareFunc.call(this, message)
+      // console.log(message);
     }
     return message
   }
