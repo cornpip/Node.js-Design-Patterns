@@ -17,7 +17,7 @@ node client.js
 ```
 -----
 ## middleware
-![미들웨어예제](https://user-images.githubusercontent.com/74674780/152691102-39c37e09-5ab1-4101-956c-5913d28e7624.jpg)  
+<img src="https://user-images.githubusercontent.com/74674780/152691102-39c37e09-5ab1-4101-956c-5913d28e7624.jpg" width="700">
 
 server는 main진행에서 new zmqMiddleware 생성시에 handleIncoming에서 대기상태가 된다.  
 client도 마찬가지로 생성시에 handle에서 message가 올 때까지 대기상태가 된다.  
