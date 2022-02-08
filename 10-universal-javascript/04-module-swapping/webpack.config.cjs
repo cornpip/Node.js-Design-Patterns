@@ -39,7 +39,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin(),
     new webpack.NormalModuleReplacementPlugin(
-      /src\/say-hello\.js$/,
+      /\.\/say-hello\.js$/,
       path.resolve(__dirname, 'src', 'say-hello-browser.js')
     )
   ],

@@ -31,3 +31,7 @@ npm run build # or node_modules/.bin/webpack --config webpack.config.cjs
 ```
 
 Then you can open the file `dist/index.html` with your favorite browser.
+
+---
+정규표현식을 _( config.cjs 기준 )_ ./src/say-hello.js 가 아니라   
+진입 js기준으로 ./say-hello.js 로 지정해야 build시에 인식한다.

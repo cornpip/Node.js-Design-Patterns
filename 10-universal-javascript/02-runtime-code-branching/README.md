@@ -31,3 +31,10 @@ npm run build # or node_modules/.bin/webpack --config webpack.config.cjs
 ```
 
 Then you can open the file `dist/index.html` with your favorite browser.
+
+----
+AND(&&)연산자: 첫 번째 falsy를 반환  
+OR(||)연산자: 첫 번째 truthy를 반환  
+
+js연산자 우선순위  
+괄호 > 증감 연산자 > 산술 연산자 > 비교 연산자 > 논리 연산자 > 대입 연산자
