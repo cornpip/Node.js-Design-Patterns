@@ -8,4 +8,5 @@ const html = htm.bind(react.createElement)
 ReactDOM.render(
   html`<${App}/>`,
   document.getElementsByTagName('body')[0]
+  // document.getElementById('root') // not working
 )

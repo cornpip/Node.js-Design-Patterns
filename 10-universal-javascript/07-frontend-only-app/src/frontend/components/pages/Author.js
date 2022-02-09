@@ -11,6 +11,7 @@ export class Author extends react.Component {
     const author = authors.find(
       author => author.id === this.props.match.params.authorId
     )
+    console.log(this.props);
 
     if (!author) {
       return html`<${FourOhFour} error="Author not found"/>`

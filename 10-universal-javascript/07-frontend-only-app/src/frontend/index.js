@@ -8,5 +8,6 @@ const html = htm.bind(react.createElement)
 
 reactDOM.render(
   html`<${BrowserRouter}><${App}/></>`,
-  document.getElementById('root')
+  document.getElementById('root') // Router관련 리액트 문법같다.
+  // document.getElementsByTagName('body')[0] // 잘 동작
 )

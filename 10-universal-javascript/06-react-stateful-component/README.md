@@ -25,3 +25,13 @@ npm run build # or node_modules/.bin/webpack --config webpack.config.cjs
 ```
 
 Then you can open the file `dist/index.html` with your favorite browser.
+
+---
+
+`e.preventDefault()` 주로 사용되는 경우는
+
+1. a 태그를 눌렀을때 href 링크로 이동하지 않게 할 경우
+
+2. form 안에 submit 역할을 하는 버튼을 눌렀어도 새로 실행하지 않게 하고싶을 경우 (submit은 작동됨)  
+
+

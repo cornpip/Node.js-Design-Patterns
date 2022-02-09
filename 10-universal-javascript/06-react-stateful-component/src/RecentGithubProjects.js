@@ -24,6 +24,7 @@ export class RecentGithubProjects extends react.Component {
       createRequestUri(this.props.query),
       { mode: 'cors' }
     )
+    console.log(this.props);
     const responseBody = await response.json()
     this.setState({
       projects: responseBody.items,
