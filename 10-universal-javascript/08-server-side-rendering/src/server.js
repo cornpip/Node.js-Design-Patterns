@@ -27,7 +27,7 @@ const template = ({ content }) => `<!DOCTYPE html>
 const server = fastify({ logger: true }) // ②
 
 server.register(fastifyStatic, { // ③
-  root: resolve(__dirname, '..', 'public'),
+  root: resolve(__dirname, '..','public'),
   prefix: '/public/'
 })
 
