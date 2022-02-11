@@ -16,7 +16,7 @@ export class FourOhFour extends react.Component {
     return html`<div>
       <${Header}/>
       <div>
-        <h2>404</h2>
+        <h2>404~~</h2>
         <h3>${this.props.error || 'Page not found'}</h3>
         <${Link} to="/">Go back to the home page</>
       </div>

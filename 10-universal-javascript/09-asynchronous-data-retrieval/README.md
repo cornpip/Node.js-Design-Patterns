@@ -30,3 +30,6 @@ React에서의 console은 Brower console이다.
 브라우저에서 서로 다른 포트나 도메인에 대해 비동기 http요청을 하려면 API서버가 CORS를 지원해야 한다.  
 _( 즉 React에서 비동기 요청받으려면 api가 cors를 지원해야한다. )_
 
+서버 렌더링에서  
+BrowserRouter도 있어야하고 _( index.js는 webpack진입점이자 최종 react app느낌 )_  
+StaticRouter도 있어야 하는 듯
