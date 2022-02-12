@@ -52,6 +52,8 @@ server.get('*', async (req, reply) => {
   if (typeof component.preloadAsyncData === 'function') {
     hasStaticContext = true
     try {
+      console.log('============match============')
+      console.log(match);
       const data = await component.preloadAsyncData({ match })
       staticData = data
     } catch (err) {

@@ -14,6 +14,9 @@ export class Author extends AsyncPage {
   }
 
   render () {
+    console.log('=========state=============');
+    console.log(this.state);
+
     if (this.state.loading) {
       return html`<div>
         <${Header}/>

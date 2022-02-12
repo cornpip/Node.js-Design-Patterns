@@ -21,7 +21,7 @@ export class AsyncPage extends react.Component {
       ? window.__STATIC_CONTEXT__ // client side check for SSR preloaded data
       : this.props.staticContext // server side check for SSR preloaded data
 
-    if (staticContext && staticContext[location]) {
+    if (staticContext && staticContext[location]) { 
       const { data, err } = staticContext[location]
       staticData = data
       staticError = err
@@ -38,6 +38,7 @@ export class AsyncPage extends react.Component {
   async componentDidMount () {
     // browser only
     if (!this.hasStaticData) {
+      console.log('nooooooooooo');
       let staticData
       let staticError
       try {

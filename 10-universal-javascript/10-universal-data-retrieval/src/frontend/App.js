@@ -14,3 +14,12 @@ export class App extends react.Component {
     </>`
   }
 }
+
+//`<${Route} key=${routeConfig.path} ...${routeConfig}/>`
+// 위 문법은 아래와 같은 형태를 뜻한다.
+// <${Route}
+  // key= "/"
+  // path="/"
+  // exact=${true}
+  // component=${AuthorsIndex}
+// />

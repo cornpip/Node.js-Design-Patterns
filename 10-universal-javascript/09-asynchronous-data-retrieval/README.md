@@ -30,6 +30,15 @@ React에서의 console은 Brower console이다.
 브라우저에서 서로 다른 포트나 도메인에 대해 비동기 http요청을 하려면 API서버가 CORS를 지원해야 한다.  
 _( 즉 React에서 비동기 요청받으려면 api가 cors를 지원해야한다. )_
 
-서버 렌더링에서  
-BrowserRouter도 있어야하고 _( index.js는 webpack진입점이자 최종 react app느낌 )_  
-StaticRouter도 있어야 하는 듯
+~~서버 렌더링에서~~  
+~~BrowserRouter도 있어야하고 _( index.js는 webpack진입점이자 최종 react app느낌 )~~  
+~~StaticRouter도 있어야 하는 듯~~  
+
+3가지 포인트로 보면 될 거 같다.  
++ 브라우저의 react
++ 서버의 react
++ 서버의 응답  
+
+`reactServer.renderToString`는 서버의 react를 렌더링 하는 방법이야.  
+_( 서버 응답에 서버의 react작업이 없어도 브라우저의 react와 전혀 무관하다. )_  
+_( 서버 응답으로 react의 동작과 컴포넌트를 사용하고 싶기에 서버의 react 작업이 필요했던 것 )_
