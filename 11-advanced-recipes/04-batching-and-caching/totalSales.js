@@ -3,6 +3,7 @@ import sublevel from 'subleveldown'
 
 const db = level('example-db')
 const salesDb = sublevel(db, 'sales', { valueEncoding: 'json' })
+let num = 0;
 
 export async function totalSales (product) {
   const now = Date.now()
@@ -13,7 +14,7 @@ export async function totalSales (product) {
     }
   }
 
-  console.log(`totalSales() took: ${Date.now() - now}ms`)
+  console.log(`totalSales() took: ${Date.now() - now}ms ~~~~ ${++num}`)
 
   return sum
 }

@@ -8,6 +8,7 @@ export function totalSales (product) {
     return runningRequests.get(product)
   }
 
+  console.log('not Batching');
   const resultPromise = totalSalesRaw(product)
   runningRequests.set(product, resultPromise)
   resultPromise.finally(() => {
