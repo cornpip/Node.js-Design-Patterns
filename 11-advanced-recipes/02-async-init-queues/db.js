@@ -11,7 +11,7 @@ class DB extends EventEmitter {
       return new Promise((resolve, reject) => {
         const command = () => {
           this.query(queryString)
-            .then(resolve, reject)
+            .then(resolve, reject)  // 속의 this.query의 이행값을 밖의 query의 이행값으로 반환
         }
         this.commandsQueue.push(command)
       })

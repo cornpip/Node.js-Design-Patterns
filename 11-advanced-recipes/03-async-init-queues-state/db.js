@@ -51,6 +51,10 @@ class DB extends EventEmitter {
       this.emit('connected')
       const oldState = this.state
       this.state = new InitializedState(this)
+      // console.log(`==========`)
+      // console.log(this.state);
+      // console.log(`==========`)
+      // console.log(oldState);
       oldState[deactivate] && oldState[deactivate]()
     }, 500)
   }

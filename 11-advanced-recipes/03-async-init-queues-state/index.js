@@ -9,4 +9,4 @@ async function updateLastAccess () {
 updateLastAccess()
 setTimeout(() => {
   updateLastAccess()
-}, 600)
+}, 100)
