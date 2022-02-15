@@ -4,10 +4,14 @@ import { CancelError } from './cancelError.js'
 
 const cancelable = createAsyncCancelable(function * () {
   const resA = yield asyncRoutine('A')
+  console.log('------------------1')
+  // throw new Error('zzz');
   console.log(resA)
   const resB = yield asyncRoutine('B')
+  console.log('------------------2')
   console.log(resB)
   const resC = yield asyncRoutine('C')
+  console.log('------------------3')
   console.log(resC)
 })
 
