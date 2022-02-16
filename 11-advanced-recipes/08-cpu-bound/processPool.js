@@ -42,7 +42,7 @@ export class ProcessPool {
   release (worker) {
     if (this.waiting.length > 0) {
       const { resolve } = this.waiting.shift()
-      return resolve(worker)
+      return resolve(worker)  //앞에꺼의 worker = fork(this.file)이 들어온다.
     }
     this.active = this.active.filter(w => worker !== w)
     this.pool.push(worker)

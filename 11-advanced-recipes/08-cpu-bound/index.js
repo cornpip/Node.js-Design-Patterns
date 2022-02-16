@@ -1,8 +1,8 @@
 import { createServer } from 'http'
-import { SubsetSum } from './subsetSum.js'
+// import { SubsetSum } from './subsetSum.js'
 // import { SubsetSum } from './subsetSumDefer.js'
 // import { SubsetSum } from './subsetSumFork.js'
-// import { SubsetSum } from './subsetSumThreads.js'
+import { SubsetSum } from './subsetSumThreads.js'
 
 createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost')
@@ -18,6 +18,9 @@ createServer((req, res) => {
   subsetSum.on('match', match => {
     res.write(`Match: ${JSON.stringify(match)}\n`)
   })
-  subsetSum.on('end', () => res.end())
+  subsetSum.on('end', () => {
+    console.log('-------------------')
+    return res.end()
+  })
   subsetSum.start()
 }).listen(8000, () => console.log('Server started'))

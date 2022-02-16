@@ -11,6 +11,7 @@ export class SubsetSum extends EventEmitter {
   _combine (set, subset) {
     for (let i = 0; i < set.length; i++) {
       const newSubset = subset.concat(set[i])
+      // console.log(set.slice(i+1));
       this._combine(set.slice(i + 1), newSubset)
       this._processSubset(newSubset)
     }

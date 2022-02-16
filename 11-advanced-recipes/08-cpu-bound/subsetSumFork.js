@@ -17,11 +17,11 @@ export class SubsetSum extends EventEmitter {
 
   async start () {
     const worker = await workers.acquire()
-    worker.send({ sum: this.sum, set: this.set })
+    worker.send({ sum: this.sum, set: this.set }) //fork(this.file) 에 send를 해주는 것
 
     const onMessage = msg => {
       if (msg.event === 'end') {
-        worker.removeListener('message', onMessage)
+        worker.removeListener('message', onMessage) // 이벤트 리스너 열어두는거 메모리 누수 원인이라 지우고 끝낸다.
         workers.release(worker)
       }
 
