@@ -50,3 +50,8 @@ To stop all the Node.js servers use:
 ```bash
 npm run stop # or `node_modules/.bin/forever stopall`
 ```
+---
+정방향 프록시: 클라이언트 대신에 프록시됨   
+역방향 프록시: 서버 대신에 프록시됨  
+
+nginx로 역방향 프록시 역할을 하는 로드밸런스를 구현할 수 있다.

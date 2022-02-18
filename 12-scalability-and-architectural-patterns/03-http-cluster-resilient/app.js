@@ -7,6 +7,8 @@ if (cluster.isMaster) {
   console.log(`Clustering to ${availableCpus.length} processes`)
   availableCpus.forEach(() => cluster.fork())
   cluster.on('exit', (worker, code) => {
+    // console.log(`--------------------${code}`)
+    // console.log(worker);
     if (code !== 0 && !worker.exitedAfterDisconnect) {
       console.log(`Worker ${worker.process.pid} crashed. Starting a new worker`)
       cluster.fork()
