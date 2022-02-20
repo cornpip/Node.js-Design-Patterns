@@ -29,6 +29,7 @@ const server = createServer((req, res) => {
       return res.end('Bad gateway')
     }
 
+    console.log(servers);
     route.index = (route.index + 1) % servers.length // ⑤
     const server = servers[route.index]
     const target = `http://${server.Address}:${server.Port}`
