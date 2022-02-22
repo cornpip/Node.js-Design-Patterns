@@ -36,3 +36,9 @@ Then, at the same time open another browser tab at the following address:
 ```
 http://localhost:8082
 ```
+---
+Redis (window)  
+작업 관리자 -> 서비스에 Redis 중지되어 있다면  
+C:\Program Files\Redis 위치에서 server 키고 있는 동안은 on  
+
+작업 관리자 -> 서비스에 Redis 실행 중 이면 항시 on
