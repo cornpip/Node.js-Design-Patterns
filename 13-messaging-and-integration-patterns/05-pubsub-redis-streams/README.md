@@ -31,3 +31,6 @@ You can try to access at the same time those addresses:
 http://localhost:8080
 http://localhost:8081
 ```
+--- 
+Redis 스트림 관련 명령어들은 5.0 부터 지원된다.  
+윈도우 릴리즈 버전은 스트림관련 명령어를 포함 안하는 듯 하다.

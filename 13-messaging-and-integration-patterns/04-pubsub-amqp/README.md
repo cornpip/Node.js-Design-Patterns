@@ -32,3 +32,6 @@ You can try to access at the same time those addresses:
 http://localhost:8080
 http://localhost:8081
 ```
+---
+RabbitMQ도 Redis 처럼 작업관리자 -> 서비스 실행중이면 자동 on  
+중지면 rabbitmq-server로 on ( 명령창 닫으면 off )
